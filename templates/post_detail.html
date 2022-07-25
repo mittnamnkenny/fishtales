@@ -31,12 +31,57 @@
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
+                <div class="row">
+                    <div class="col-md-2">
+                        <strong>
+                            <span class="text-secondary">
+                                <i class="fas fa-location-pin"></i> Location: {{ post.get_location_display | safe }}
+                            </span>
+                        </strong>
+                    </div>
+                    <div class="col-md-2">
+                        <strong>
+                            <span class="text-secondary">
+                                <i class="fas fa-fish"></i> Fish Caught: {{ post.fish_caught | safe }}
+                            </span>
+                        </strong>
+                    </div>
+                    <!-- Display correct fa icon based on weather_conditions -->
+                    {% if post.weather_conditions >= 1 %}
+                    <div class="col-md-2">
+                        <strong>
+                            {% if post.weather_conditions == 1 %}
+                            <span class="text-secondary">
+                                <i class="fas fa-sun"></i> Weather: {{ post.get_weather_conditions_display | safe }}
+                            </span>
+                            {% elif post.weather_conditions == 2 %}
+                            <span class="text-secondary">
+                                <i class="fas fa-cloud"></i> Weather: {{ post.get_weather_conditions_display | safe }}
+                            </span>
+                            {% elif post.weather_conditions == 3 %}
+                            <span class="text-secondary">
+                                <i class="fas fa-wind"></i> Weather: {{ post.get_weather_conditions_display | safe }}
+                            </span>
+                            {% elif post.weather_conditions == 4 %}
+                            <span class="text-secondary">
+                                <i class="fas fa-cloud-rain"></i> Weather:
+                                {{ post.get_weather_conditions_display | safe }}
+                            </span>
+                            {% elif post.weather_conditions == 5 %}
+                            <span class="text-secondary">
+                                <i class="fas fa-snowflake"></i> Weather:
+                                {{ post.get_weather_conditions_display | safe }}
+                            </span>
+                            {% endif %}
+                        </strong>
+                    </div>
+                    {% endif %}
+                </div>
+                <p class="card-text">
                     {{ post.content | safe }}
                 </p>
                 <div class="row">
-
-                    <div class="col-1">
+                    <div class="col col-md-1">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -53,12 +98,12 @@
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
                             <!-- The number of likes goes before the closing strong tag -->
-                            <span class="text-secondary">{{ post.number_of_likes }} </span>
+                            <span class="text-secondary">{{ post.number_of_likes }}</span>
                         </strong>
                     </div>
-                    <div class="col-1">
+                    <div class="col col-md-1">
                         {% with comments.count as total_comments %}
-                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                        <strong class="text-secondary"><i class="fas fa-comments"></i>
                             <!-- Our total_comments variable goes before the closing strong tag -->
                             {{ total_comments }}</strong>
                         {% endwith %}
@@ -103,6 +148,7 @@
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
+                    <br>
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% endif %}
