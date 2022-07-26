@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from datetime import datetime
+from django.urls import reverse
+from django.template.defaultfilters import slugify
 
 
 STATUS = (
@@ -43,7 +45,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
 
@@ -55,6 +57,13 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('post_detail', kwargs={'slug': self.slug})
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
 
 
 class Comment(models.Model):

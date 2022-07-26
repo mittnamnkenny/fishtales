@@ -53,6 +53,10 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link {% if 'post/add' in request.path %} active {% endif %}"
+                            href="{% url 'post_add' %}">Add Post</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {% if 'logout' in request.path %} active {% endif %}"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
