@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post
-from .forms import CommentForm, PostForm
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from .models import Post
+from .forms import CommentForm, PostForm
 
 
 class PostList(generic.ListView):
@@ -80,11 +81,12 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class PostAdd(LoginRequiredMixin, generic.CreateView):
+class PostAdd(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
 
     model = Post
     template_name = 'post_add.html'
     form_class = PostForm
+    success_message = 'Post Added'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
