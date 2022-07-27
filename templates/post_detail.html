@@ -18,28 +18,39 @@
                 {% if 'placeholder' in post.featured_image.url %}
                 <img src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg" width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.featured_image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
 
+{% if request.user == post.author %}
 <div class="container">
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col-xl-4 offset-xl-8">
+            <a href="{% url 'post_update' post.slug %}"><button class="btn btn-signup"><i class="fa fa-edit"></i> Update
+                    this post</button></a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4 mt-3 left top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xl-2">
                         <strong>
                             <span class="text-secondary">
                                 <i class="fas fa-location-pin"></i> Location: {{ post.get_location_display | safe }}
                             </span>
                         </strong>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-xl-2">
                         <strong>
                             <span class="text-secondary">
                                 <i class="fas fa-fish"></i> Fish Caught: {{ post.fish_caught | safe }}
@@ -48,7 +59,7 @@
                     </div>
                     <!-- Display correct fa icon based on weather_conditions -->
                     {% if post.weather_conditions >= 1 %}
-                    <div class="col-md-2">
+                    <div class="col-xl-2">
                         <strong>
                             {% if post.weather_conditions == 1 %}
                             <span class="text-secondary">
@@ -119,7 +130,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-8 card mb-4 mt-3">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -140,7 +151,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
                 <!-- For later -->
                 {% if user.is_authenticated %}
