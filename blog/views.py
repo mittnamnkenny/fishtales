@@ -91,3 +91,15 @@ class PostAdd(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+class PostUpdate(LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView):
+
+    model = Post
+    template_name = 'post_update.html'
+    form_class = PostForm
+    success_message = 'Post Updated'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
