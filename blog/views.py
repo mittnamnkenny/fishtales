@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
 from .forms import CommentForm, PostForm
@@ -93,7 +93,10 @@ class PostAdd(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-class PostUpdate(LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView):
+class PostUpdate(LoginRequiredMixin,
+                 SuccessMessageMixin,
+                 UserPassesTestMixin,
+                 generic.UpdateView):
 
     model = Post
     template_name = 'post_update.html'
@@ -103,3 +106,9 @@ class PostUpdate(LoginRequiredMixin, SuccessMessageMixin, generic.UpdateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
