@@ -125,6 +125,10 @@ class PostDelete(LoginRequiredMixin,
     success_url = reverse_lazy('blog')
     success_message = 'Post Deleted'
 
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(PostDelete, self).delete(request, *args, **kwargs)
+
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
