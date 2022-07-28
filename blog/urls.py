@@ -1,6 +1,6 @@
-from . import views
 from django.urls import path
 from django.views.generic import TemplateView
+from . import views
 
 
 urlpatterns = [
@@ -11,4 +11,6 @@ urlpatterns = [
     path('post/add/', views.PostAdd.as_view(), name='post_add'),
     path('<slug:slug>/update/', views.PostUpdate.as_view(),
          name='post_update'),
+    path('<slug:slug>/delete/', views.PostDelete.as_view(),
+         name='post_delete'),
 ]

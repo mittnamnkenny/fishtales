@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
 from .models import Post
 from .forms import CommentForm, PostForm
 
@@ -106,6 +107,23 @@ class PostUpdate(LoginRequiredMixin,
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
+class PostDelete(LoginRequiredMixin,
+                 SuccessMessageMixin,
+                 UserPassesTestMixin,
+                 generic.DeleteView):
+
+    model = Post
+    template_name = 'post_detail.html'
+    success_url = reverse_lazy('blog')
+    success_message = 'Post Deleted'
 
     def test_func(self):
         post = self.get_object()

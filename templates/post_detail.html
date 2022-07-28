@@ -179,8 +179,11 @@
                 <p>{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="modal-footer">
+                <form action="{% url 'post_delete' post.slug %}" method="POST" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-del">Delete</button>
+                </form>
                 <button type="button" class="btn btn-signup" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-del">Delete</button>
             </div>
         </div>
     </div>
