@@ -24,12 +24,33 @@
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                                <p class="card-text h6 mt-2">
+                                    <i class="fas fa-location-pin"></i> {{ post.get_location_display | safe }}
+                                    &#8739;
+                                    <i class="fas fa-fish"></i> {{ post.fish_caught | safe }}
+                                    <!-- Display correct fa icon based on weather_conditions -->
+                                    {% if post.weather_conditions >= 1 %}
+                                    &#8739;
+                                    Weather
+                                    {% if post.weather_conditions == 1 %}
+                                    <i class="fas fa-sun"></i>
+                                    {% elif post.weather_conditions == 2 %}
+                                    <i class="fas fa-cloud"></i>
+                                    {% elif post.weather_conditions == 3 %}
+                                    <i class="fas fa-wind"></i>
+                                    {% elif post.weather_conditions == 4 %}
+                                    <i class="fas fa-cloud-rain"></i>
+                                    {% elif post.weather_conditions == 5 %}
+                                    <i class="fas fa-snowflake"></i>
+                                    {% endif %}
+                                    {% endif %}
+                                </p>
                                 <h2 class="card-title">{{ post.title }}</h2>
-                                <!-- Display post content, 15 characters and appends an ellipsis if no excerpt provided -->
+                                <!-- Display post content, 30 characters and appends an ellipsis if no excerpt provided -->
                                 {% if post.excerpt %}
                                 <p class="card-text">{{ post.excerpt }}</p>
                                 {% else %}
-                                <p class="card-text">{{ post.content | striptags | truncatechars:15 }}</p>
+                                <p class="card-text">{{ post.content | striptags | truncatechars:30 }}</p>
                                 {% endif %}
                             </a>
                             <hr>
