@@ -146,8 +146,21 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #00bfa5;
     border: 1px solid #00bfa5;
+}
+
+.btn-del {
+    background-color: #C53938;
+    color: #fff;
+    border: 1px solid #C53938;
+}
+
+.btn-del:hover,
+.btn-del:active {
+    background-color: #fff;
+    color: #C53938;
+    border: 1px solid #C53938;
 }
 
 .link {
