@@ -26,10 +26,10 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-4 offset-xl-8">
-            <a href="{% url 'post_update' post.slug %}"><button class="btn btn-signup"><i class="fa fa-edit"></i> Update
+            <a href="{% url 'post_update' post.slug %}"><button class="btn btn-signup m-1"><i class="fa fa-edit"></i> Update
                     this post</button></a>
             <!-- Button trigger Post Delete modal -->
-            <button type="button" class="btn btn-del" data-toggle="modal" data-target="#postModal"><i
+            <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#postModal"><i
                     class="fa fa-trash"></i> Delete this post</button>
         </div>
     </div>
@@ -144,6 +144,40 @@
                     </p>
                     {{ comment.body | linebreaks }}
                 </div>
+                {% if request.user == comment.author %}
+                <!-- Button trigger Comment Delete modal -->
+                <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal"><i
+                        class="fa fa-trash"></i> Delete this comment</button>
+                <!-- Comment Delete Modal -->
+                <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="commentModalLabel">Are you sure you want to delete this comment?</h5>
+                                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"><i class="fas fa-xmark"></i></span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="comments" style="padding: 10px;">
+                                    <p class="font-weight-bold">
+                                        {{ comment.author }}
+                                        <span class=" text-muted font-weight-normal">
+                                            {{ comment.created_on }}
+                                        </span> wrote:
+                                    </p>
+                                    {{ comment.body | linebreaks }}
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-signup" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <hr>
                 {% endfor %}
             </div>
         </div>
