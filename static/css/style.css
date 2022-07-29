@@ -42,23 +42,7 @@ body {
     color: #00bfa5;
 }
 
-
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #004d40;
-}
-
-.main-bg {
-    background-color: #F9FAFC;
-}
+/* Blog/Post Detail */
 
 .card {
     border: none;
@@ -117,6 +101,8 @@ body {
     z-index: 100;
 }
 
+/* Buttons/Links */
+
 .post-link {
     text-decoration: none;
     color: #004d40;
@@ -170,7 +156,7 @@ body {
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #004d40;
     text-decoration: underline;
 }
 
@@ -185,4 +171,20 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+.thin {
+    font-weight: 300;
+}
+
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-bg {
+    background-color: #004d40;
+}
+
+.main-bg {
+    background-color: #F9FAFC;
 }
