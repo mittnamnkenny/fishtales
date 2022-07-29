@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm, PostForm
 
 
@@ -132,5 +132,29 @@ class PostDelete(LoginRequiredMixin,
     def test_func(self):
         post = self.get_object()
         if self.request.user == post.author:
+            return True
+        return False
+
+
+class CommentDelete(LoginRequiredMixin,
+                    SuccessMessageMixin,
+                    UserPassesTestMixin,
+                    generic.DeleteView):
+
+    model = Comment
+    template_name = 'post_detail.html'
+    success_message = 'Comment Deleted'
+
+    def get_success_url(self):
+        slug = self.kwargs['slug']
+        return reverse_lazy('post_detail', kwargs={'slug': slug})
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(CommentDelete, self).delete(request, *args, **kwargs)
+
+    def test_func(self):
+        comment = self.get_object()
+        if self.request.user == comment.author:
             return True
         return False
