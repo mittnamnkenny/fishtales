@@ -28,10 +28,14 @@ WEATHER = (
 )
 
 
+def default_title():
+    return str(f'Fishing {datetime.today()}')[:24]
+
+
 class Post(models.Model):
     title = models.CharField(
         max_length=200, unique=True,
-        default=str(f'Fishing {datetime.today()}')[:24]
+        default=default_title
     )
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
