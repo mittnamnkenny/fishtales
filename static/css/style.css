@@ -42,6 +42,35 @@ body {
     color: #00bfa5;
 }
 
+/* Hero */
+
+.hero {
+    background-color: #00695c;
+    background-image: url("https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658738172/bg_zk4qet.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom; 
+    background-size: cover;
+}
+
+.hero-text {
+    min-height: 50vh;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 8em;
+}
+
+#wave {
+    width: 100%;
+}
+
+
+
+
+
 /* Blog/Post Detail */
 
 .card {
