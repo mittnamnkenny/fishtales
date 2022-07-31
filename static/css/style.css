@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap");
+
 body {
     background-color: #F9FAFC;
 }
@@ -61,6 +63,12 @@ body {
 
 .hero-text h1 {
     font-size: 8em;
+    font-weight: 400;
+}
+
+.hero-text h2 {
+    font-family: "Cabin Sketch", sans-serif;
+    font-size: 3em;
 }
 
 #wave {
@@ -216,4 +224,22 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1780px) {
+    .hero-text h1 {
+        font-size: 5em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hero-text h1 {
+        font-size: 3em;
+    }
+
+    .hero-text h2 {
+        font-size: 2em;
+    }
 }
