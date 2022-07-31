@@ -271,4 +271,13 @@ body {
     .hero-text h2 {
         font-size: 2em;
     }
+
+    .featurette .col i {
+        font-size: 3em;
+        margin-bottom: 5px;
+    }
+
+    .featurette .col h3 {
+        font-size: 2em;
+    }
 }
