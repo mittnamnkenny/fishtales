@@ -51,7 +51,15 @@
 
 <!-- Recent posts Section -->
 <section class="recent-posts">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <h2>Recent Posts</h2>
+            </div>
+        </div>
+    </div>
     <div class="container">
+        <hr>
         <div class="row">
             <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
@@ -105,7 +113,7 @@
                                     {% endif %}
                                     {% endif %}
                                 </p>
-                                <h4 class="card-title mt-4">{{ post.title }}</h4>
+                                <h4 class="card-title mt-4">{{ post.title | truncatechars:30 }}</h4>
                                 <!-- Display post content, 30 characters and appends an ellipsis if no excerpt provided -->
                                 {% if post.excerpt %}
                                 <p class="card-text">{{ post.excerpt }}</p>

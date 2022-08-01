@@ -106,7 +106,27 @@ body {
     font-weight: 400;
 }
 
+/* Recent posts */
 
+.recent-posts {
+    background-color: #00695c;
+}
+
+.recent-posts h2 {
+    font-family: "Cabin Sketch", sans-serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.recent-posts hr {
+    color: #fff;
+}
+
+.recent-posts .card {
+    background-color: #F9FAFC;
+}
 
 /* Blog/Post Detail */
 
