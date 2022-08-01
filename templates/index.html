@@ -58,10 +58,101 @@
             </div>
         </div>
     </div>
+    <!-- Bootstrap Carousel -->
+    <div class="container-fluid recent-posts-carousel">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div id="carouselSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <!-- Using Indexing Syntax for Slicing, latest post -->
+                            {% for post in post_list|slice:'0:1' %}
+                            {% if 'placeholder' in post.featured_image.url %}
+                            <!-- Display placeholder photos based on fishing location -->
+                            {% if post.get_location_display == 'Alsterån' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                            {% elif post.get_location_display == 'Hällesjön' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                            {% elif post.get_location_display == 'Isgölen' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                            {% else %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                            {% endif %}
+                            {% else %}
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            {% endif %}
+                            {% endfor %}
+                            <div class="carousel-caption d-none d-md-block">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!-- Using Indexing Syntax for Slicing, second latest post -->
+                            {% for post in post_list|slice:'1:2' %}
+                            {% if 'placeholder' in post.featured_image.url %}
+                            <!-- Display placeholder photos based on fishing location -->
+                            {% if post.get_location_display == 'Alsterån' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                            {% elif post.get_location_display == 'Hällesjön' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                            {% elif post.get_location_display == 'Isgölen' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                            {% else %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                            {% endif %}
+                            {% else %}
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            {% endif %}
+                            {% endfor %}
+                            <div class="carousel-caption d-none d-md-block">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <!-- Using Indexing Syntax for Slicing, third latest post -->
+                            {% for post in post_list|slice:'2:3' %}
+                            {% if 'placeholder' in post.featured_image.url %}
+                            <!-- Display placeholder photos based on fishing location -->
+                            {% if post.get_location_display == 'Alsterån' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                            {% elif post.get_location_display == 'Hällesjön' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                            {% elif post.get_location_display == 'Isgölen' %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                            {% else %}
+                            <img class="card-img-top"
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                            {% endif %}
+                            {% else %}
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            {% endif %}
+                            {% endfor %}
+                            <div class="carousel-caption d-none d-md-block">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
     <div class="container">
         <hr>
         <div class="row">
-            <!-- Blog Entries Column -->
+        <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for post in post_list %}
