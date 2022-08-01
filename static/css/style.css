@@ -109,7 +109,7 @@ body {
 /* Recent posts */
 
 .recent-posts {
-    background-color: #00695c;
+    background-color: #F9FAFC;
 }
 
 .recent-posts h2 {
@@ -143,11 +143,6 @@ body {
 .carousel-caption i {
     font-size: 3em;
     animation: MoveUpDown 2s ease-in-out infinite;
-}
-
-.recent-posts .card {
-    background-color: #F9FAFC;
-    margin-top: 5px;
 }
 
 /* Blog/Post Detail */
@@ -295,6 +290,23 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
+}
+
+/* Footer */
+
+footer p, footer hr {
+    color: #fff;
+}
+
+footer h3 {
+    font-family: "Cabin Sketch", sans-serif;
+    font-size: 2em;
+    color: #fff;
+}
+
+footer iframe {
+    filter: grayscale(100%);
+    border-radius: 5px;
 }
 
 /* Animations */
