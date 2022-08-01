@@ -49,7 +49,86 @@
     </div>
 </section>
 
-
+<!-- Recent posts Section -->
+<section class="recent-posts">
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for post in post_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                {% if 'placeholder' in post.featured_image.url %}
+                                <!-- Display placeholder photos based on fishing location -->
+                                {% if post.get_location_display == 'Alsterån' %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                                {% elif post.get_location_display == 'Hällesjön' %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                                {% elif post.get_location_display == 'Isgölen' %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                                {% else %}
+                                <img class="card-img-top"
+                                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                                {% endif %}
+                                {% else %}
+                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="author">Author: {{ post.author }}</p>
+                                </div>
+                            </div>
+                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                                <p class="card-text h6 mt-2">
+                                    <i class="fas fa-location-pin"></i> {{ post.get_location_display | safe }}
+                                    &#8739;
+                                    <i class="fas fa-fish"></i> {{ post.fish_caught | safe }}
+                                    <!-- Display correct fa icon based on weather_conditions -->
+                                    {% if post.weather_conditions >= 1 %}
+                                    &#8739;
+                                    Weather
+                                    {% if post.weather_conditions == 1 %}
+                                    <i class="fas fa-sun"></i>
+                                    {% elif post.weather_conditions == 2 %}
+                                    <i class="fas fa-cloud"></i>
+                                    {% elif post.weather_conditions == 3 %}
+                                    <i class="fas fa-wind"></i>
+                                    {% elif post.weather_conditions == 4 %}
+                                    <i class="fas fa-cloud-rain"></i>
+                                    {% elif post.weather_conditions == 5 %}
+                                    <i class="fas fa-snowflake"></i>
+                                    {% endif %}
+                                    {% endif %}
+                                </p>
+                                <h4 class="card-title mt-4">{{ post.title }}</h4>
+                                <!-- Display post content, 30 characters and appends an ellipsis if no excerpt provided -->
+                                {% if post.excerpt %}
+                                <p class="card-text">{{ post.excerpt }}</p>
+                                {% else %}
+                                <p class="card-text">{{ post.content | striptags | truncatechars:30 }}</p>
+                                {% endif %}
+                            </a>
+                            <hr>
+                            <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
+                                {{ post.number_of_likes }} &#8739; <i class="far fa-comments"></i>
+                                {{ post.comments.count }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
 
 
 {% endblock %}
