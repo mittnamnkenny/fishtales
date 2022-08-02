@@ -142,6 +142,31 @@ class PostDelete(LoginRequiredMixin,
         return False
 
 
+class CommentUpdate(LoginRequiredMixin,
+                    SuccessMessageMixin,
+                    UserPassesTestMixin,
+                    generic.UpdateView):
+
+    model = Comment
+    template_name = 'post_detail.html'
+    form_class = CommentForm
+    success_message = 'Comment Updated'
+
+    def get_success_url(self):
+        slug = self.kwargs['slug']
+        return reverse_lazy('post_detail', kwargs={'slug': slug})
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+
 class CommentDelete(LoginRequiredMixin,
                     SuccessMessageMixin,
                     UserPassesTestMixin,

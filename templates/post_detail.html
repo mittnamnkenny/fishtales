@@ -188,10 +188,13 @@
                                     </p>
                                     {{ comment.body | linebreaks }}
                                 </div>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-signup" data-dismiss="modal">Close</button>
+                                <form action="{% url 'comment_update' post.slug comment.pk %}" method="POST"
+                                    class="d-inline">
+                                    {{ comment_form | crispy }}
+                                    {% csrf_token %}
+                                    <br>
+                                    <button type="submit" class="btn btn-signup">Update</button>
+                                </form>
                             </div>
                         </div>
                     </div>
