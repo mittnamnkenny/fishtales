@@ -292,6 +292,21 @@ body {
     background-color: #F9FAFC;
 }
 
+/* Flash Messages */
+
+#msg {
+    font-size: 1.2em;
+    text-align: center;
+    color: #fff;
+    background-color: #00bfa5;
+    border: 5px double #fff;
+    animation: MoveUpDown .5s ease-in forwards;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
+
 /* Footer */
 
 footer p, footer hr {
