@@ -161,8 +161,10 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    left: -2px;
+    left: -5px;
     background-color: #00bfa5;
+    padding-right: 10px;
+    border-left: 5px double #F9FAFC;
 }
 
 .author {
