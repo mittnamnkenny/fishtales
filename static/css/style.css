@@ -5,6 +5,10 @@ body {
     padding-top: 65px;
 }
 
+.asteriskField {
+    display: none;
+}
+
 /* Navigation */
 
 .navbar {
