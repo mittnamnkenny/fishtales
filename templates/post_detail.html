@@ -41,9 +41,8 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-4 offset-xl-8">
-            <a href="{% url 'post_update' post.slug %}"><button class="btn btn-signup m-1"><i class="fa fa-edit"></i>
-                    Update
-                    this post</button></a>
+            <a href="{% url 'post_update' post.slug %}" class="btn btn-signup m-1"><i class="fa fa-edit"></i> Update
+                this post</a>
             <!-- Button trigger Post Delete modal -->
             <button type="button" class="btn btn-del m-1" data-toggle="modal" data-target="#postModal"><i
                     class="fa fa-trash"></i> Delete this post</button>
@@ -161,8 +160,8 @@
                     {{ comment.body | linebreaks }}
                 </div>
                 {% if request.user == comment.author %}
-                <a href="{% url 'comment_update' post.slug comment.pk %}"><button class="btn btn-signup badge"><i
-                            class="fa fa-edit"></i> Update this comment</button></a>
+                <a href="{% url 'comment_update' post.slug comment.pk %}" class="btn btn-signup badge"><i
+                        class="fa fa-edit"></i> Update this comment</a>
                 <!-- Button trigger Comment Delete modal -->
                 <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal"><i
                         class="fa fa-trash"></i> Delete this comment</button>
