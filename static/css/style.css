@@ -246,6 +246,19 @@ body {
     border: 1px solid #00bfa5;
 }
 
+.btn-sec {
+    background-color: #596269;
+    color: #fff;
+    border: 1px solid #596269;
+}
+
+.btn-sec:hover,
+.btn-sec:active {
+    background-color: #fff;
+    color: #596269;
+    border: 1px solid #596269;
+}
+
 .btn-del {
     background-color: #C53938;
     color: #fff;
