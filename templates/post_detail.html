@@ -161,44 +161,11 @@
                     {{ comment.body | linebreaks }}
                 </div>
                 {% if request.user == comment.author %}
-                <!-- Button trigger Comment Update modal -->
-                <button type="button" class="btn btn-signup badge" data-toggle="modal" data-target="#commentUpdateModal"><i
-                    class="fa fa-edit"></i> Update this comment</button>
+                <a href="{% url 'comment_update' post.slug comment.pk %}"><button class="btn btn-signup badge"><i
+                            class="fa fa-edit"></i> Update this comment</button></a>
                 <!-- Button trigger Comment Delete modal -->
                 <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal"><i
                         class="fa fa-trash"></i> Delete this comment</button>
-                <!-- Comment Update Modal -->
-                <div class="modal fade" id="commentUpdateModal" tabindex="-1" aria-labelledby="commentUpdateModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="commentUpdateModalLabel">Update comment:</h5>
-                                <button type="button" class="btn" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"><i class="fas fa-xmark"></i></span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="comments" style="padding: 10px;">
-                                    <p class="font-weight-bold">
-                                        {{ comment.author }}
-                                        <span class=" text-muted font-weight-normal">
-                                            {{ comment.created_on }}
-                                        </span> wrote:
-                                    </p>
-                                    {{ comment.body | linebreaks }}
-                                </div>
-                                <form action="{% url 'comment_update' post.slug comment.pk %}" method="POST"
-                                    class="d-inline">
-                                    {{ comment_form | crispy }}
-                                    {% csrf_token %}
-                                    <br>
-                                    <button type="submit" class="btn btn-signup">Update</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Comment Delete Modal -->
                 <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel"
                     aria-hidden="true">

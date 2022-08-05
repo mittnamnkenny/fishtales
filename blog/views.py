@@ -148,7 +148,7 @@ class CommentUpdate(LoginRequiredMixin,
                     generic.UpdateView):
 
     model = Comment
-    template_name = 'post_detail.html'
+    template_name = 'comment_update.html'
     form_class = CommentForm
     success_message = 'Comment Updated'
 
