@@ -206,8 +206,8 @@
         </div>
         <div class="col-md-4 card mb-4 mt-3">
             <div class="card-body">
-                {% if user.is_authenticated %}
                 <h3>Leave a comment:</h3>
+                {% if user.is_authenticated %}
                 <p>Posting as: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
@@ -215,6 +215,12 @@
                     <br>
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
+                {% else %}
+                <p>To leave a comment or like a post, please log in. If you have not created an account yet, then
+                    register first.</p>
+                <br>
+                <a href="{% url 'account_login' %}" class="btn btn-signup">Login</a>
+                <a href="{% url 'account_signup' %}" class="btn btn-signup m-1">Register</a>
                 {% endif %}
             </div>
         </div>
