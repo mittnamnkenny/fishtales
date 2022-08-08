@@ -16,21 +16,23 @@
                 <!-- Display placeholder photos based on fishing location -->
                 {% if post.get_location_display == 'Alsterån' %}
                 <img class="card-img-top"
-                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg"
-                    width="100%">
+                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg" width="100%"
+                    alt="Image of Alsterån">
                 {% elif post.get_location_display == 'Hällesjön' %}
                 <img class="card-img-top"
                     src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg"
-                    width="100%">
+                    width="100%" alt="Image of Hällesjön">
                 {% elif post.get_location_display == 'Isgölen' %}
                 <img class="card-img-top"
-                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg" width="100%">
+                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg" width="100%"
+                    alt="Image of Isgölen">
                 {% else %}
                 <img class="card-img-top"
-                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg" width="100%">
+                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg" width="100%"
+                    alt="Image of random fishing location">
                 {% endif %}
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%">
+                <img src="{{ post.featured_image.url }}" width="100%" alt="Uploaded fishing image">
                 {% endif %}
             </div>
         </div>
@@ -203,7 +205,7 @@
                 <hr>
                 {% endfor %}
                 {% if not comments %}
-                    <p class="text-secondary">No comments on this post.</p>
+                <p class="text-secondary">No comments on this post.</p>
                 {% endif %}
             </div>
         </div>

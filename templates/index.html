@@ -71,19 +71,23 @@
                             <!-- Display placeholder photos based on fishing location -->
                             {% if post.get_location_display == 'Alsterån' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg"
+                                alt="Image of Alsterån">
                             {% elif post.get_location_display == 'Hällesjön' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg"
+                                alt="Image of Hällesjön">
                             {% elif post.get_location_display == 'Isgölen' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg"
+                                alt="Image of Isgölen">
                             {% else %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg"
+                                alt="Image of random fishing location">
                             {% endif %}
                             {% else %}
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Uploaded fishing image">
                             {% endif %}
                             {% endfor %}
                             <div class="carousel-caption">
@@ -97,19 +101,23 @@
                             <!-- Display placeholder photos based on fishing location -->
                             {% if post.get_location_display == 'Alsterån' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg"
+                                alt="Image of Alsterån">
                             {% elif post.get_location_display == 'Hällesjön' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg"
+                                alt="Image of Hällesjön">
                             {% elif post.get_location_display == 'Isgölen' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg"
+                                alt="Image of Isgölen">
                             {% else %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg"
+                                alt="Image of random fishing location">
                             {% endif %}
                             {% else %}
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Uploaded fishing image">
                             {% endif %}
                             {% endfor %}
                             <div class="carousel-caption">
@@ -123,19 +131,23 @@
                             <!-- Display placeholder photos based on fishing location -->
                             {% if post.get_location_display == 'Alsterån' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg"
+                                alt="Image of Alsterån">
                             {% elif post.get_location_display == 'Hällesjön' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg"
+                                alt="Image of Hällesjön">
                             {% elif post.get_location_display == 'Isgölen' %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg"
+                                alt="Image of Isgölen">
                             {% else %}
                             <img class="card-img-top"
-                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                                src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg"
+                                alt="Image of random fishing location">
                             {% endif %}
                             {% else %}
-                            <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                            <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Uploaded fishing image">
                             {% endif %}
                             {% endfor %}
                             <div class="carousel-caption">
@@ -163,19 +175,24 @@
                                     <!-- Display placeholder photos based on fishing location -->
                                     {% if post.get_location_display == 'Alsterån' %}
                                     <img class="card-img-top"
-                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg">
+                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg"
+                                        alt="Image of Alsterån">
                                     {% elif post.get_location_display == 'Hällesjön' %}
                                     <img class="card-img-top"
-                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg">
+                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg"
+                                        alt="Image of Hällesjön">
                                     {% elif post.get_location_display == 'Isgölen' %}
                                     <img class="card-img-top"
-                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg">
+                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg"
+                                        alt="Image of Isgölen">
                                     {% else %}
                                     <img class="card-img-top"
-                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg">
+                                        src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg"
+                                        alt="Image of random fishing location">
                                     {% endif %}
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ post.featured_image.url }}">
+                                    <img class="card-img-top" src=" {{ post.featured_image.url }}"
+                                        alt="Uploaded fishing image">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Author: {{ post.author }}</p>
@@ -203,7 +220,7 @@
                                         {% endif %}
                                         {% endif %}
                                     </p>
-                                    <h4 class="card-title mt-4">{{ post.title | truncatechars:30 }}</h4>
+                                    <p class="card-title h4 mt-4">{{ post.title | truncatechars:30 }}</p>
                                     <!-- Display post content, 30 characters and appends an ellipsis if no excerpt provided -->
                                     {% if post.excerpt %}
                                     <p class="card-text">{{ post.excerpt }}</p>
