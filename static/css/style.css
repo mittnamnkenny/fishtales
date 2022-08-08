@@ -40,7 +40,22 @@ body {
     font-weight: 500;
 }
 
-.navbar-text {
+.nav-item .active {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    padding-bottom: 0px;
+    width: fit-content;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.navbar-dark .navbar-text {
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.2em;
     font-weight: 500;
 }
