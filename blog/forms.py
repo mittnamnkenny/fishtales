@@ -8,6 +8,11 @@ class CommentForm(forms.ModelForm):
         model = Comment
         fields = ('body',)
 
+    def __init__(self, *args, **kwargs):
+        super(CommentForm, self).__init__(*args, **kwargs)
+        self.fields['body'].label = ''
+        self.fields['body'].widget.attrs['placeholder'] = 'Add comment...'
+
 
 class PostForm(forms.ModelForm):
     class Meta:
