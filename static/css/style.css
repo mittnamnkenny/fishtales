@@ -210,7 +210,7 @@ body {
 .masthead-image {
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .masthead-image:after {
