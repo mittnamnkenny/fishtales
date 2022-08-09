@@ -29,10 +29,14 @@ WEATHER = (
 
 
 def default_title():
+    """Set deafaul Post title"""
     return str(f'Fishing {datetime.today()}')[:24]
 
 
 class Post(models.Model):
+    """
+    Database model for Posts
+    """
     title = models.CharField(
         max_length=200, unique=True,
         default=default_title
@@ -54,23 +58,31 @@ class Post(models.Model):
         User, related_name='blogpost_like', blank=True)
 
     class Meta:
+        """Set the order of posts by date descending"""
         ordering = ['-created_on']
 
     def __str__(self):
+        """Returns a string representation of an object"""
         return self.title
 
     def number_of_likes(self):
+        """Returns number of blog post likes"""
         return self.likes.count()
 
     def get_absolute_url(self):
+        """Returns successful post to related slug url"""
         return reverse('post_detail', kwargs={'slug': self.slug})
 
     def save(self, *args, **kwargs):
+        """Save method override with slugify"""
         self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
 
 
 class Comment(models.Model):
+    """
+    Database model for comments
+    """
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE,
@@ -80,7 +92,9 @@ class Comment(models.Model):
     approved = models.BooleanField(default=True)
 
     class Meta:
+        """Sets the order of comments by date ascending"""
         ordering = ['created_on']
 
     def __str__(self):
+        """Returns comment with body and name"""
         return f'Comment {self.body} by {self.author}'
