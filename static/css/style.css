@@ -384,6 +384,10 @@ footer iframe {
     .hero-text h1 {
         font-size: 5em;
     }
+
+    .carousel-item {
+        height: 35vh;
+    }
 }
 
 @media screen and (max-width: 500px) {

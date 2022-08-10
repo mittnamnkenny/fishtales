@@ -209,9 +209,9 @@ class CommentUpdate(LoginRequiredMixin,
         return super().form_valid(form)
 
     def test_func(self):
-        """Test that logged in user is post author"""
-        post = self.get_object()
-        if self.request.user == post.author:
+        """Test that logged in user is comment author"""
+        comment = self.get_object()
+        if self.request.user == comment.author:
             return True
         return False
 
@@ -240,7 +240,7 @@ class CommentDelete(LoginRequiredMixin,
         return super(CommentDelete, self).delete(request, *args, **kwargs)
 
     def test_func(self):
-        """Test that logged in user is post author"""
+        """Test that logged in user is comment author"""
         comment = self.get_object()
         if self.request.user == comment.author:
             return True
