@@ -160,7 +160,7 @@ body {
     border-radius: 5px;
 }
 
-.carousel-caption i {
+.carousel-caption .fa-angle-down {
     font-size: 3em;
     animation: MoveUpDown 2s ease-in-out infinite;
 }
@@ -235,6 +235,10 @@ body {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
+}
+
+.card-img-top {
+    width: 100%;
 }
 
 .card-body img {

@@ -16,23 +16,23 @@
                 <!-- Display placeholder photos based on fishing location -->
                 {% if post.get_location_display == 'Alsterån' %}
                 <img class="card-img-top"
-                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg" width="100%"
+                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740641/alsteran_cdqutx.jpg"
                     alt="Image of Alsterån">
                 {% elif post.get_location_display == 'Hällesjön' %}
                 <img class="card-img-top"
                     src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740653/hallesjon_pjqigq.jpg"
-                    width="100%" alt="Image of Hällesjön">
+                    alt="Image of Hällesjön">
                 {% elif post.get_location_display == 'Isgölen' %}
                 <img class="card-img-top"
-                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg" width="100%"
+                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740665/isgolen_px9qtt.jpg"
                     alt="Image of Isgölen">
                 {% else %}
                 <img class="card-img-top"
-                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg" width="100%"
+                    src="https://res.cloudinary.com/dwe8qxpnf/image/upload/v1658740684/other_nl9yv8.jpg"
                     alt="Image of random fishing location">
                 {% endif %}
                 {% else %}
-                <img src="{{ post.featured_image.url }}" width="100%" alt="Uploaded fishing image">
+                <img src="{{ post.featured_image.url }}" alt="Uploaded fishing image">
                 {% endif %}
             </div>
         </div>
@@ -116,30 +116,28 @@
     </div>
     <div class="row">
         <div class="col col-md-1">
-            <strong>
-                <!-- Display toggle like button/heart -->
-                {% if user.is_authenticated %}
-                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                    {% csrf_token %}
-                    {% if liked %}
-                    <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like"
-                        aria-label="like"><i class="fas fa-heart"></i></button>
-                    {% else %}
-                    <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like"
-                        aria-label="like"><i class="far fa-heart"></i></button>
-                    {% endif %}
-                </form>
+            <!-- Display toggle like button/heart -->
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like" aria-label="like"><i
+                        class="fas fa-heart"></i></button>
                 {% else %}
-                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                <button type="submit" name="blogpost_id" value="{{ post.slug }}" class="btn-like" aria-label="like"><i
+                        class="far fa-heart"></i></button>
                 {% endif %}
-                <span class="text-secondary">{{ post.number_of_likes }}</span>
-            </strong>
+            </form>
+            {% else %}
+            <span class="text-secondary"><i class="far fa-heart"></i></span>
+            {% endif %}
+            <span class="text-secondary">{{ post.number_of_likes }}</span>
         </div>
         <div class="col col-md-1">
             <!-- Display total number of comments on post -->
             {% with comments.count as total_comments %}
-            <strong class="text-secondary"><i class="fas fa-comments"></i>
-                {{ total_comments }}</strong>
+            <p class="text-secondary"><i class="fas fa-comments"></i>
+                {{ total_comments }}</p>
             {% endwith %}
         </div>
     </div>
@@ -167,11 +165,11 @@
                 <a href="{% url 'comment_update' post.slug comment.pk %}" class="btn btn-signup badge"><i
                         class="fa fa-edit"></i> Update this comment</a>
                 <!-- Button trigger Comment Delete modal -->
-                <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal{{ comment.pk }}"><i
-                        class="fa fa-trash"></i> Delete this comment</button>
+                <button type="button" class="btn btn-del badge" data-toggle="modal"
+                    data-target="#commentModal{{ comment.pk }}"><i class="fa fa-trash"></i> Delete this comment</button>
                 <!-- Comment Delete Modal -->
-                <div class="modal fade" id="commentModal{{ comment.pk }}" tabindex="-1" aria-labelledby="commentModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="commentModal{{ comment.pk }}" tabindex="-1"
+                    aria-labelledby="commentModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
                             <div class="modal-header">

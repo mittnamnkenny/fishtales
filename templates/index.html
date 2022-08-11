@@ -89,8 +89,12 @@
                             {% else %}
                             <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Uploaded fishing image">
                             {% endif %}
-                            {% endfor %}
                             <div class="carousel-caption">
+                                <div class="image-flash dark-bg border-0 d-none d-md-block mb-2">
+                                    <p class="h2 mt-2 thin"><i class="fas fa-location-pin"></i>
+                                        {{ post.get_location_display | safe }}</p>
+                                </div>
+                                {% endfor %}
                                 <i class="fas fa-angle-down"></i>
                             </div>
                         </div>
@@ -119,8 +123,12 @@
                             {% else %}
                             <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Uploaded fishing image">
                             {% endif %}
-                            {% endfor %}
                             <div class="carousel-caption">
+                                <div class="image-flash dark-bg border-0 d-none d-md-block mb-2">
+                                    <p class="h2 mt-2 thin"><i class="fas fa-location-pin"></i>
+                                        {{ post.get_location_display | safe }}</p>
+                                </div>
+                                {% endfor %}
                                 <i class="fas fa-angle-down"></i>
                             </div>
                         </div>
@@ -149,8 +157,12 @@
                             {% else %}
                             <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="Uploaded fishing image">
                             {% endif %}
-                            {% endfor %}
                             <div class="carousel-caption">
+                                <div class="image-flash dark-bg border-0 d-none d-md-block mb-2">
+                                    <p class="h2 mt-2 thin"><i class="fas fa-location-pin"></i>
+                                        {{ post.get_location_display | safe }}</p>
+                                </div>
+                                {% endfor %}
                                 <i class="fas fa-angle-down"></i>
                             </div>
                         </div>
@@ -250,6 +262,7 @@
             </div>
         </div>
         <br>
+    </div>
 </section>
 
 
