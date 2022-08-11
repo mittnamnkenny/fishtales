@@ -186,6 +186,16 @@ body {
     border-left: 5px double #F9FAFC;
 }
 
+.image-new-flash {
+    position: absolute;
+    bottom: 25%;
+    min-width: 20%;
+    left: -5px;
+    background-color: #E84610;
+    padding-right: 10px;
+    border-left: 5px double #F9FAFC;
+}
+
 .author {
     color: #0F1413;
     margin: 4px;

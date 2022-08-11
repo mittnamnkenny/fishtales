@@ -194,6 +194,12 @@
                                     <img class="card-img-top" src=" {{ post.featured_image.url }}"
                                         alt="Uploaded fishing image">
                                     {% endif %}
+                                    <!-- Display new text to the most latest blog post -->
+                                    {% if post in post_list|slice:'0:1' %}
+                                    <div class="image-new-flash">
+                                        <p class="author">NEW</p>
+                                    </div>
+                                    {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Author: {{ post.author }}</p>
                                     </div>
