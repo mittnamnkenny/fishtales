@@ -187,7 +187,7 @@ body {
 }
 
 .author {
-    color: white;
+    color: #0F1413;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -256,7 +256,7 @@ body {
 
 .btn-signup {
     background-color: #00bfa5;
-    color: #fff;
+    color: #0F1413;
     border: 1px solid #00bfa5;
 }
 
@@ -268,29 +268,29 @@ body {
 }
 
 .btn-sec {
-    background-color: #596269;
-    color: #fff;
-    border: 1px solid #596269;
+    background-color: #b0bec5;
+    color: #0F1413;
+    border: 1px solid #b0bec5;
 }
 
 .btn-sec:hover,
 .btn-sec:active {
     background-color: #fff;
-    color: #596269;
-    border: 1px solid #596269;
+    color: #b0bec5;
+    border: 1px solid #b0bec5;
 }
 
 .btn-del {
-    background-color: #C53938;
-    color: #fff;
-    border: 1px solid #C53938;
+    background-color: #ef5350;
+    color: #0F1413;
+    border: 1px solid #ef5350;
 }
 
 .btn-del:hover,
 .btn-del:active {
     background-color: #fff;
-    color: #C53938;
-    border: 1px solid #C53938;
+    color: #ef5350;
+    border: 1px solid #ef5350;
 }
 
 .link {
@@ -331,6 +331,11 @@ body {
 
 .main-bg {
     background-color: #F9FAFC;
+}
+
+.text-muted,
+.text-secondary {
+    color: #616161 !important;
 }
 
 /* Flash Messages */
