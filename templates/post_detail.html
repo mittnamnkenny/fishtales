@@ -167,10 +167,10 @@
                 <a href="{% url 'comment_update' post.slug comment.pk %}" class="btn btn-signup badge"><i
                         class="fa fa-edit"></i> Update this comment</a>
                 <!-- Button trigger Comment Delete modal -->
-                <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal"><i
+                <button type="button" class="btn btn-del badge" data-toggle="modal" data-target="#commentModal{{ comment.pk }}"><i
                         class="fa fa-trash"></i> Delete this comment</button>
                 <!-- Comment Delete Modal -->
-                <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel"
+                <div class="modal fade" id="commentModal{{ comment.pk }}" tabindex="-1" aria-labelledby="commentModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                         <div class="modal-content">
