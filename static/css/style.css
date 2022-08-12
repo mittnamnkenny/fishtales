@@ -409,6 +409,12 @@ footer iframe {
     }
 }
 
+@media screen and (max-width: 1180px) {
+    .hero {
+        background-attachment: local;
+    }
+}
+
 @media screen and (max-width: 500px) {
     .hero-text h1 {
         font-size: 3em;
