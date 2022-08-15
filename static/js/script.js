@@ -1,5 +1,5 @@
 // Remove flash message alert after 2.5 seconds
-document.addEventListener("DOMContentLoaded", removeAlerts);
+document.addEventListener('DOMContentLoaded', removeAlerts);
 
 function removeAlerts() {
     setTimeout(function () {
@@ -8,3 +8,5 @@ function removeAlerts() {
         alert.close();
     }, 2500);
 }
+
+module.exports = removeAlerts;
