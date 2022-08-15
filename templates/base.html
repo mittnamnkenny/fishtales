@@ -21,6 +21,9 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
 
+    <!-- JS Link -->
+    <script src="{% static 'js/script.js' %}"></script>
+
     <!-- CSS Link -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
@@ -123,15 +126,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Script Flash Messages -->
-    <script>
-        setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 2500);
-    </script>
 
     <!-- Bootstrap Script -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
