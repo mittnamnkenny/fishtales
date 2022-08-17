@@ -9,4 +9,4 @@ function removeAlerts() {
     }, 2500);
 }
 
-module.exports = removeAlerts;
+// module.exports = removeAlerts;
