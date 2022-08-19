@@ -9,4 +9,5 @@ function removeAlerts() {
     }, 2500);
 }
 
+// Used when testing with Jest
 // module.exports = removeAlerts;
