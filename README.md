@@ -129,17 +129,22 @@ The navbar is present on all pages of the site. It uses bootstrap's built-in cla
 
 On the left-hand side of the navbar the user is presented with the logo; FishTales with a styled Font Awesome icon (fas-fish),  which when clicked will redirect the user to the home page.
 
-![Navbar Login](documentation/features-navbarlogin.jpg)
-
 The right-hand side contains the navigation links for the other pages of the site and depending on login status the following link will be present:
   - Not logged in: Home, Blog, Register, Login
+
+![Navbar Login](documentation/features-navbarlogin.jpg)
+
   - Logged in: Home, Blog, Add Post, Logout, Username with included Font Awesome icon (fas fa-user)
 
 ![Navbar Logout](documentation/features-navbarlogout.jpg)
 
 The navbar is fully responsive, so when on smaller devices the navbar will collapse and the navigation links are accessed using a ”hamburger menu”.
 
+<details>
+<summary>View collapsed navbar:</summary>
+
 ![Navbar Collapse](documentation/features-navbarcollapse.jpg)
+</details>
 
 #### Home page:
 
@@ -158,9 +163,11 @@ At the bottom of the hero section there is an gradient svg-wave for a smoother t
 
 When the user visits the site for the first time, they will clearly see that this is a fly fishing blog.
 
-Viewed on smaller devices:
+<details>
+<summary>Hero section on mobile devices:</summary>
 
 ![Hero Small](documentation/features-herosmall.jpg)
+</details>
 
 ##### Home page - Featurette section:
 
@@ -220,9 +227,11 @@ For each post the following information is presented to the user:
 This will give the user enough information to decide which blog post might appeal to them. 
 By clicking on the post, the user is redirected to the post detail page for that post.
 
-Viewed on smaller devices:
+<details>
+<summary>Blog page on mobile devices:</summary>
 
 ![Blog Page Small](documentation/features-blogsmall.jpg)
+</details>
 
 #### Add post page:
 
@@ -287,9 +296,11 @@ Delete this comment - The user will have to confirm deleting their comment; a mo
 
 ![Delete Comment](documentation/features-deletecomment.jpg)
 
-Viewed on smaller devices:
+<details>
+<summary>Post detail on mobile devices:</summary>
 
 ![Post Detail Small](documentation/features-postdetailsmall.jpg)
+</details>
 
 #### Post update page:
 
