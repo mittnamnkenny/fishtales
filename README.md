@@ -402,13 +402,87 @@ The Google Map is removed on smaller devices.
 #### Meta Data:
 FishTales Fly Fishing Blog
 
-### Features to Implement in the future:
+### Features to Implement in the future
   - US9. View own posts:
     - This user story was prioritized as a could-have feature and will not be implemented at this stage due to low priority.
 
 ## Design
 
+### Wireframes
 
+At the beginning of this project and as a part of the planning phase wireframes were created using Balsamiq. The wireframes were used to get a basic idea on how the site might look when finished, both on desktop and mobile devices.
+
+Wireframes were created for the following pages and features:
+
+Home page:
+
+![Wireframes Home](documentation/wireframes-home.jpg)
+
+Blog page:
+
+![Wireframes Blog](documentation/wireframes-blog.jpg)
+
+Post detail:
+
+![Wireframes Detail](documentation/wireframes-postdetail.jpg)
+
+Add post:
+
+![Wireframes Add](documentation/wireframes-addpost.jpg)
+
+Mobile devices:
+
+![Wireframes Mobile](documentation/wireframes-mobile.jpg)
+
+### Data Model
+
+This project is hosted on Heroku and the database used is Heroku PostgreSQL. 
+Cloudinary is used to store all blog images. Two custom models were created for this project; Post and Comment. With the default Django User model already included.
+
+Entity Relationship Diagram - Post:
+
+![ERD Posts](documentation/erd-posts.jpg)
+
+Entity Relationship Diagram - Comment:
+
+![ERD Comments](documentation/erd-comments.jpg)
+
+### Site map
+
+To explain the structure of the site and how to navigate it, I created a site map using Lucidchart:
+
+![Site Map](documentation/sitemap.jpg)
+
+### Colours
+
+To match the fly fishing theme of this project, teal was chosen as the main colour to use throughout the site. Teal or green is often used with fly fishing and will not be distracting to the user. Google Materialize color palette was used to select the hex colour codes.
+
+With focus on accessibility and contrast, the following colours were chosen:
+
+![Design Palette](documentation/design-palette.jpg)
+
+Other colours used:
+
+  - #F9FAFC - Off-white, Background colour
+  - #E84610 - Red, Like button
+  - #0F1413 - Dark, text colour
+
+### Typography
+
+I have used font-family "Helvetica Neue", Helvetica, Arial, sans-serif for most of the text throughout the site. This is Bootstrap's default font, and this was chosen because it both looks good and is easy to read.
+
+To make text stand out and catch the users attention, an outlined font is used on certain headings. 
+Cabin Sketch a Google Web Font, was chosen because it goes well with the theme of the website and is easy to read, with sans-serif as a fallback if Cabin Sketch should fail to load.
+
+![Design Cabinsketch](documentation/design-cabinsketch.jpg)
+
+### Imagery
+
+All current images on the site and uploaded blog posts is provided by mittnamnkenny’s fishing trips, excepts the Hero image used on the Home page:
+
+  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) Man fishing on river at daytime, Chris Sarsgard
+
+This photo was chosen as the hero image to display on the front page. Photoshop was used to adjust the brightness and a gradient overlay was added to make the featured hero text stand out and more visible to the user.
 
 ## Technologies Used
 
