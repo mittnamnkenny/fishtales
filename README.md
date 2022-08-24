@@ -533,7 +533,515 @@ This photo was chosen as the hero image to display on the front page. Photoshop 
 
 ## Testing
 
+### Browser Testing
 
+I have tested that this application works using Macbook Air (Retina, 13-inch, 2018), with macOS Monterey 12.5 installed, using the following browsers:
+
+  - Safari Version 15.6
+  - Google Chrome Version 104.0.5112.79
+  - Firefox Browser 103.0.2
+
+I have tested this application works on the following iOS devices using Safari Version 15.6 browser:
+
+  - iPhone X, with iPadOS 15.6 installed
+  - iPad Air 3, with iPadOS 15.6 installed
+
+### Responsiveness
+
+Chrome developer tool have been used to check the responsiveness.
+
+  - I have tested that this application works on different screen sizes from iPhone 5 (320px wide) and very large screens like 5K iMac Pro (5120 x 2880 px).
+
+### Validator Testing
+
+#### W3C Markup Validator:
+
+The W3C Markup Validator were used to validate the HTML on all pages of the project to ensure there were no syntax errors in there. To validate the HTML files all Django template tags were manually removed with the HTML code copied and inserted to the base template.
+
+Index page:
+
+![HTML Index](documentation/testing/htmlchecker-index.jpg)
+
+Blog page:
+
+![HTML Blog](documentation/testing/htmlchecker-blog.jpg)
+
+Post Detail page:
+
+![HTML Detail](documentation/testing/htmlchecker-postdetail.jpg)
+
+Post Add page:
+
+![HTML Add](documentation/testing/htmlchecker-postadd.jpg)
+
+Post Update page:
+
+![HTML Update](documentation/testing/htmlchecker-postupdate.jpg)
+
+Comment Update page:
+
+![HTML Comment](documentation/testing/htmlchecker-commentupdate.jpg)
+
+#### W3C CSS Validator:
+
+The W3C CSS Validator Services were used to validate the CSS to ensure there were no errors in there.
+
+![CSS Val](documentation/testing/w3ccssvalidator.jpg)
+
+#### JSHint:
+
+JSHint was used to validate the JavaScript with no errors highlighted.
+
+![Jshint](documentation/testing/jshint.jpg)
+
+#### PEP8 Online:
+
+PEP8 Online linter (Python validator) The code passed without any errors on all files tested:
+
+admin.py
+
+![PEP8 Admin](documentation/testing/pep8onlinecheck-admin.jpg)
+
+forms.py
+
+![PEP8 Forms](documentation/testing/pep8onlinecheck-forms.jpg)
+
+models.py
+
+![PEP8 Models](documentation/testing/pep8onlinecheck-models.jpg)
+
+testforms.py
+
+![PEP8 Testforms](documentation/testing/pep8onlinecheck-testforms.jpg)
+
+testmodels.py
+
+![PEP8 Testmodels](documentation/testing/pep8onlinecheck-testmodels.jpg)
+
+testviews.py
+
+![PEP8 Testviews](documentation/testing/pep8onlinecheck-testviews.jpg)
+
+urls.py
+
+![PEP8 Urls](documentation/testing/pep8onlinecheck-urls.jpg)
+
+views.py
+
+![PEP8 Views](documentation/testing/pep8onlinecheck-views.jpg)
+
+#### Lighthouse:
+
+I have confirmed that the colours and fonts chosen are easy to read and accessible by running it through lighthouse in Chrome developer tools on the following pages:
+
+Home page:
+
+![Lighthouse Home](documentation/testing/lighthouse-home.jpg)
+
+Blog page:
+
+![Lighthouse Blog](documentation/testing/lighthouse-blog.jpg)
+
+Post Detail page:
+
+![Lighthouse Detail](documentation/testing/lighthouse-postdetail.jpg)
+
+### Automated Testing
+
+#### Jest:
+
+Jest was used to automatically test the JavaScript code in the script.js file. By installing the Jest framework and using the npm test command the following test suites were completed:
+
+Jest test result:
+
+![Jest](documentation/testing/jest.jpg)
+
+For more information: [View the test code here.](https://github.com/mittnamnkenny/fishtales/blob/main/static/js/tests/script.test.js)
+
+#### Django testing tools:
+
+Django TestCase was used to create automatic tests for Python files. The test reporting tool ’Coverage’ was installed to show the percentage of Python code that’s been covered by tests.
+
+A total of 20 tests were written with the following test files:
+
+  - [test_forms.py](https://github.com/mittnamnkenny/fishtales/blob/main/blog/test_forms.py)
+  - [test_models.py](https://github.com/mittnamnkenny/fishtales/blob/main/blog/test_models.py)
+  - [test_views.py](https://github.com/mittnamnkenny/fishtales/blob/main/blog/test_views.py)
+
+Coverage test result:
+
+![Coverage](documentation/testing/coverage.jpg)
+
+### User Stories testing
+
+To further ensure this application is working correctly and functions as expected, manual testing was also performed. User Stories were tested successfully to verify that all acceptance criteria was met. 
+
+  - US1. Account registration and login:
+    - As a **Site User** I can **register an account** so that **I can share my fishing stories, comment and like**
+
+    - Acceptance Criteria:
+      - To register a user must enter a username and password (email is optional)
+      - User should not be able to register the same username more than once
+    
+    - I have tested:
+      - That username and password is required and that email is optional.
+      - That registering with an already created username with the following response: A user with that username already exists. I will not be able to register the same username more than once.
+
+  - US2. Manage posts:
+    - As a **Site Admin** I can **create, read, update and delete posts and comments** so that **I can manage my blog content**
+
+    - Acceptance Criteria:
+      - Site admin can log in to the /admin URL with a superuser account
+      - Site admin can manage all posts with the included superuser account
+      - Site admin can manage all comments with the included superuser account
+    
+    - I have tested:
+      - Logging in to the /admin URL with the superuser account.
+      - Creating, updating and deleting both posts and comments with the superuser account.
+
+  - US3. Create drafts:
+    - As a **Site Admin** I can **create draft posts** so that **I can finish writing the content later**
+
+    - Acceptance Criteria:
+      - Site admin can log in to the /admin URL with a superuser account
+      - Site admin can with the included admin panel create post drafts and save them for later publish
+
+    - I have tested:
+      - Logging in to the /admin URL with the superuser account.
+      - Creating draft post, save them so that they can be published later.
+
+  - US4. View post list:
+    - As a **Site User** I can **view a list of posts** so that **I can easily select one fishing story to read**
+
+    - Acceptance Criteria:
+      - All posts are presented on the blog page
+      - Posts are sorted by date created
+      - Author, Image, title, and date created is shown on screen for each post
+      - Paginated view
+
+    - I have tested:
+      - That all posts are presented on the blog page and if the number of total posts exceeds six, a paginated view is presented to the user.
+      - That the Next and Prev links work as expected.
+      - That the correct information is presented to the user for each blog post.
+      - That posts are sorted by date created and that any new blog posts are automatically added to the post list.
+
+  - US5. Open a post:
+    - As a **Site User** I can **click on a post** so that **I can read the content**
+
+    - Acceptance Criteria:
+      - Author, Image, title, date created, blog content, fish caught and location is available on screen
+      - Likes and comments are accessible
+
+    - I have tested:
+      - That all posts on the blog- and home page can be clicked and opened for full detail view.
+      - That the correct information is presented to the user for each blog post.
+
+  - US6. Create post:
+    - As a **Site User** I can **create my own posts** and **share my fishing stories**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to create their own posts
+      - User should complete the post form with the required fields
+      - User can upload their own photo
+
+    - I have tested:
+      - That signed in users are presented with the Add Post link in the navbar and that the link works as expected.
+      - That all form fields are required to submit a post.
+      - That the placeholder images work as expected and an uploaded image in the image field is displayed as featured image.
+      - That the Summernote toolbar works as expected.
+      - That the Add post page and functionality is only available to signed in users.
+
+  - US7. Edit post:
+    - As a **Site User** I can **edit my own post** so that **I can update the content**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to edit their own posts
+      - User should complete the post form with the required fields
+
+    - I have tested:
+      - That the post author is presented with the Update this post link on the Post detail page and that the link works as expected.
+      - That clicking on the Update this post link loads the entirety of the post and that all fields are pre-populated.
+      - That the Update button and that updating a post works as expected.
+      - That the Update post page and functionality is only available to the post author.
+
+  - US8. Delete post:
+    - As a **Site User** I can **delete my own post** so that **I can interact with the content**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to delete their own posts
+      - User should have to confirm before deleting their post
+
+    - I have tested:
+      - That the post author is presented with the Delete this post link on the Post detail page and that the link works as expected.
+      - Clicking on the Delete this post link will display the delete post modal with the correct information to the user.
+      - That the Delete button in the modal and that deleting a post works as expected.
+      - That the Delete post functionality is only available to the post author.
+
+  - US9. View own posts:
+    - As a **Site User** I can **view my own posts** so that **I can get a better overview of my fishing stories**
+
+    - Acceptance Criteria:
+      - The user must be registered and logged in to view their own posts
+      - The user must have at least one post registered
+
+    - I have tested:
+      - This user story was not implemented; no testing was performed.
+
+  - US10. Multiple images:
+    - As a **Site User** I can **add multiple images to my posts** so that **I can better share my fishing stories and possible catches**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to create their own posts
+      - User should be able to upload photos with their text content
+
+    - I have tested:
+      - Uploading multiple images with the Summernote toolbar.
+      - Customizing the images using Summernote float left/right and resize properties.
+      - That uploaded images are displayed correctly on the post detail page.
+
+  - US11. Placeholder photos:
+    - As a **Site User** the **placeholder photo when creating a post will be based on my fishing location if no photo is uploaded** so the **blog will have more variation in photos**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to create their own posts
+      - No uploaded photo when creating a post will generate a placeholder photo based on chosen fishing location
+
+    - I have tested:
+      - That all four placeholder photos work and will be displayed based on chosen fishing location (Alsterån, Hällesjön, Isgölen and Other) if no uploaded featured image is provided.
+      - Customizing the images using Summernote float left/right and resize properties.
+      - That the placeholder photos are displayed correctly on the Home-, Blog-, and Detail Page.
+
+  - US12. Fish caught:
+    - As a **site user** I can **see the number of fish caught without entering the detail page for each post** so that **I can better select interesting posts**
+
+    - Acceptance Criteria:
+      - Number of fish caught should be displayed on the list view
+      - Should have a matching icon
+
+    - I have tested:
+      - That the user is presented with the number of fish caught on the Home and Blog page for each post together with a matching Font Awesome icon (fas fa-fish).
+      - That the correct value of the number of fish caught is displayed to the user.
+
+  - US13. Weather info:
+    - As a **site user** I can **see the weather conditions without entering the detail page for each post** so that **I can better select interesting posts**
+
+    - Acceptance Criteria:
+      - Weather conditions should be displayed on the list view
+      - Should have matching icons
+
+    - I have tested:
+      - That the user is presented with the correct weather icon on the Home and Blog page for each post based on chosen weather conditions.
+
+  - US14. Number of comments:
+    - As a **site user** I can **see the number of comments without entering the detail page for each post** so that **I can better select interesting posts**
+
+    - Acceptance Criteria:
+      - Number of comments should be displayed on the list view
+      - Should have a matching icon
+
+    - I have tested:
+      - That the user is presented with the number of comments on the Home and Blog page for each post together with a matching Font Awesome icon (far fa-comments).
+      - That the correct value of number of comments is displayed to the user.
+
+  - US15. Number of likes:
+    - As a **site user** I can **see the number of likes without entering the detail page for each post** so that **I can better select interesting posts**
+
+    - Acceptance Criteria:
+      - Number of likes should be displayed on the list view
+      - Should have a matching icon
+
+    - I have tested:
+      - That the user is presented with the number of likes on the Home and Blog page for each post together with a matching Font Awesome icon (far fa-heart).
+      - That the correct value of number of likes is displayed to the user.
+
+  - US16. Restrict delete post:
+    - As a **site user** I will **be prevented from deleting my own post if any comments have been made** so that **comments are protected and people are encouraged to comment more**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will not be able to delete their own posts if comments have been made
+
+    - I have tested:
+      - This user story was not implemented; no testing was performed.
+
+  - US17. Restrict blog view:
+    - As a **site user** I will **not be able to view the blog content without signing in** so that **more users will register to the site**
+
+    - Acceptance Criteria:
+      - Prevent unregistered user to access blog section
+      - Provide link for registration
+
+    - I have tested:
+      - This user story was not implemented; no testing was performed.
+
+  - US18. View likes:
+    - As a **Site User** I can **view the number of likes on each post** so that **I can see which is the most popular or viral**
+
+    - Acceptance Criteria:
+      - Total number of likes should be visible when viewing a post
+      - Should include a matching icon
+
+    - I have tested:
+      - That the number of likes is displayed on the Post detail page together with a matching Font Awesome icon (fa-heart).
+      - That the correct value of number of likes is displayed to the user.
+
+  - US19. Like:
+    - As a **Site User** I can **like a post** so that **I can interact with the content**
+
+    - Acceptance Criteria:
+      - The user must be registered and logged in to like a post
+      - Should include a matching icon for toggle feature
+
+    - I have tested:
+      - That signed in users will be able to like posts on the Post detail page and that the like functionality is only available to signed in users.
+      - That the like this post button works as expected and that the number of likes are updated correctly when both adding and removing a like.
+      - That a user will not be able to like a post more than once.
+
+  - US20. Downvote:
+    - As a **Site User** I can **downvote a post** so that **I can interact with the content**
+
+    - Acceptance Criteria:
+      - The user must be registered and logged in to downvote a post
+      - Should include a matching icon for toggle feature
+
+    - I have tested:
+      - This user story was not implemented; no testing was performed.
+
+  - US21. View comments:
+    - As a **Site User** I can **view comments on an individual post** so that **I can read the conversation**
+
+    - Acceptance Criteria:
+      - All comments should be visible when viewing a post
+      - Comments should be sorted by date created
+
+    - I have tested:
+      - That all users, regardless of login status, are presented with the comment section on the Post detail page and that all comments are displayed correctly.
+      - That the comments are sorted by date created.
+
+  - US22. Comment on a post:
+    - As a **Site User** I can **leave comments on a post** so that **I can be involved in the conversation**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to leave comments on each post
+      - Name and date should be visible together with the comment
+
+    - I have tested:
+      - That logged in users are presented with the comment form on the Post detail page.
+      - That the comment form and submit button functions as expected, and when adding a new comment it’s automatically added to the list of comments.
+      - That the correct information is displayed; comment author, date created and comment body for each comment added.
+      - That the comment functionality is only available to signed in users.
+
+  - US23. Delete Comment:
+    - As a **Site User** I can **delete my own comment** so that **I can interact with the content**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to delete their own comments
+      - User should have to confirm before deleting their comment
+
+    - I have tested:
+      - That the comment author is presented with the Delete this comment link in the comment section on the Post detail page, and that the link works as expected.
+      - Clicking on the Delete this comment link will display the delete comment modal with the correct information to the user.
+      - That the Delete button in the modal and that deleting a comment works as expected.
+      - That the Delete comment functionality is only available to the comment author.
+
+  - US24. Edit comment:
+    - As a **Site User** I can **edit my own comment** so that **I can update the content**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will be able to edit their own comments
+      - User should complete the edit comment form
+
+    - I have tested:
+      - That the comment author is presented with the Update this comment link in the comment section on the Post detail page, and that the link works as expected.
+      - That clicking on the Update this comment link loads the entirety of the comment and that the comment field is pre-populated.
+      - That the Update button and that updating a comment works as expected.
+      - That the Update comment page and functionality is only available to the comment author.
+
+  - US25. Responsive:
+    - As a **Site User** I can **use the site on the following platforms: desktop, laptop, tablet and smartphone** so that **I can access all functionality**
+
+    - Acceptance Criteria:
+      - Suitable graphics on different screen sizes
+      - User should be able to use the site successfully on small devices (320px wide)
+
+    - I have tested:
+      - Browser testing
+      - Responsiveness
+
+  - US26. Design:
+    - As a **Site User** I can **get an overall positive impression based on the principles of user experience design, accessibility and responsivity** so that **I can quickly determine the purpose of the site and enjoy using it**
+
+    - Acceptance Criteria:
+      - The user is presented with an easy to use navigation
+      - The site meets accessibility guidelines
+      - The user is presented with graphics that are consistent in style and colour
+
+    - I have tested:
+      - Browser testing
+      - Responsiveness
+      - Lighthouse
+
+  - US27. System messages:
+    - As a **Site User** I will **get system messages when I interact with the site** so that **I get feedback when actions are completed**
+
+    - Acceptance Criteria:
+      - Registered and logged in users will get feedback through pop-up messages
+      - The pop-up message should disappear automatically
+
+    - I have tested:
+      - That the system/flash messages will appear correctly when performing certain actions such as: adding, updating or removing a post or comment, user login/logout.
+      - That the message will automatically disappear after 2.5 seconds or when the close button is used.
+
+  - US28. Hero image:
+    - As a **Site User** I am **presented with a hero image** so that **I can clearly see the purpose of the site**
+
+    - Acceptance Criteria:
+      - The user is presented with the hero image when visiting the front page
+      - A fishing related photo
+
+    - I have tested:
+      - That the hero image is displayed correctly on different screen sizes.
+      - That the user will always be able to see that this is a fishing photo.
+
+  - US29. Featurette:
+    - As a **Site User** I am **presented with a featurette** so that **I can better understand the site’s purpose**
+
+    - Acceptance Criteria:
+      - The user is presented with the featurette when visiting the front page
+      - Located below the hero image
+
+    - I have tested:
+      - That the featurette is displayed correctly on different screen sizes.
+
+  - US30. Favicon:
+    - As a **Site User** I am **presented with a favicon** so that **I can get a better experience when browsing with multiple tabs**
+
+    - Acceptance Criteria:
+      - The user is presented with a favicon matching the overall design of the site
+
+    - I have tested:
+      - That the user is presented with a favicon that is reflecting the purpose of this project.
+
+  - US31. Carousel:
+    - As a **Site User** I can **view a carousel with new posts** so that **I can easily see any post updates to the blog**
+
+    - Acceptance Criteria:
+      - The user will be presented with an image slide-show
+      - The slide-show will update when a new post is added
+
+    - I have tested:
+      - On the Home page, the user is presented with an image slide-show featuring the placeholder/featured image from the three most recent blog posts.
+      - That the slide-show automatically cycles through the images correctly.
+      - That adding/removing a post will automatically update the slide-show.
+
+  - US32. GitHub:
+    - As a **Site User** I am **presented with a link to mittnamnkenny’s GitHub** so that **I can view more repositories**
+
+    - Acceptance Criteria:
+      - The link should be visible in the footer
+      - The link should include a Font Awesome icon
+
+    - I have tested:
+      - That the link address is correct and that it opens in a new tab.
 
 ## Deployment
 
