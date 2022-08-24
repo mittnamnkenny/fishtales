@@ -486,7 +486,50 @@ This photo was chosen as the hero image to display on the front page. Photoshop 
 
 ## Technologies Used
 
+### Languages Used:
 
+  - HTML5
+  - CSS3
+  - JavaScript
+  - Python
+
+### Frameworks and Libraries Used:
+
+  - [Bootstrap:](https://getbootstrap.com/) Bootstrap CSS Framework used for styling and to build responsive web pages.
+  - [Cloudinary:](https://cloudinary.com/) Used to store all blog images and uploaded images.
+  - [Coverage:](https://coverage.readthedocs.io/en/latest/index.html) Used for measuring code coverage of Python test files.
+  - [Django:](https://www.djangoproject.com/) Main Python framework used in the development.
+  - [Django Allauth:](https://django-allauth.readthedocs.io/en/latest/index.html) Used for authentication and account registration.
+  - [Django Crispy Forms:](https://django-crispy-forms.readthedocs.io/en/latest/) Used to simplify the rendering of Django forms.
+  - [dj_database_url:](https://pypi.org/project/dj-database-url/) Used to allow database urls to connect to the postgres database.
+  - [Gunicorn:](https://gunicorn.org/) Green Unicorn, used as the Web Server to run Django on Heroku.
+  - [Jest:](https://jestjs.io/) A delightful JavaScript Testing Framework, used for automated tests.
+  - [psycopg2:](https://pypi.org/project/psycopg2/) Used PostgreSQL database adapter.
+  - [Summernote:](https://github.com/summernote/django-summernote) To provide a WYSIWYG editor for customizing new blog content and add images.
+
+### Software and Web Applications Used:
+
+  - [Am I Responsive:](http://ami.responsivedesign.is) Checking the responsive.
+  - [Balsamiq:](https://balsamiq.com/) Used to create the wireframes.
+  - [Chrome DevTools:](https://developer.chrome.com/docs/devtools/) Used to test the response on different screen sizes, debugging and to generate a Lighthouse report to analyze page load.
+  - [Font Awesome:](https://fontawesome.com/) Used throughout the site to add icons for aesthetic and UX purposes.
+  - [Gauger:](https://gauger.io/fonticon/) To create the favicon, create beautiful favicon with ease.
+  - [Git:](https://git-scm.com/) Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+  - [GitHub:](https://github.com/) GitHub is used to store the projects code after being pushed from Git and to create the Kanban board used for this project.
+  - [Google Fonts:](https://fonts.google.com/) To import font family ’Cabin Sketch’ which is used throughout the site. Added fallback font sans-serif.
+  - [Heroku:](https://www.heroku.com/) For deployment and hosting of the application.
+  - [Heroku PostgreSQL:](https://www.heroku.com/postgres) The database used for this application.
+  - [HTML Validator:](https://validator.w3.org/) Check your code for HTML validation.
+  - [JSHint:](https://jshint.com/) Check code for JavaScript validation.
+  - [Lucidchart:](https://www.lucidchart.com/pages/) Used to create the site map.
+  - [Materialize Colors:](https://materializecss.com/color.html) Used to create the main colour palette.
+  - [Photoshop:](https://www.adobe.com/se/products/photoshop.html) Used to customize the hero image, adjust brightness and add gradient overlay.
+  - [SVG Backgrounds:](https://svgbackgrounds.com/) Scalable Vector Graphic used in the featurette section. Should the background image fail there is a fallback background colour set so the page still functions.
+  - [SVG Wave Generator:](https://softr.io/tools/svg-wave-generator/) Used to generate a gradient SVG wave used in the hero section.
+  - [Tiny PNG:](https://tinypng.com/) Compressing images to smaller sizes.
+  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) Hero image, Man fishing on river at daytime, Chris Sarsgard.
+  - [W3 CSS Validator:](https://jigsaw.w3.org/css-validator/) Check your code for CSS validation.
+  - [Writer:](https://writer.com/grammar-checker/) Free Grammar Check.
 
 ## Testing
 
