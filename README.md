@@ -562,31 +562,45 @@ Index page:
 
 ![HTML Index](documentation/testing/htmlchecker-index.jpg)
 
+Index page - [View Full HTML Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/htmlcheckerfull-index.pdf)
+
 Blog page:
 
 ![HTML Blog](documentation/testing/htmlchecker-blog.jpg)
+
+Blog page - [View Full HTML Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/htmlcheckerfull-blog.pdf)
 
 Post Detail page:
 
 ![HTML Detail](documentation/testing/htmlchecker-postdetail.jpg)
 
+Post Detail page - [View Full HTML Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/htmlcheckerfull-postdetail.pdf)
+
 Post Add page:
 
 ![HTML Add](documentation/testing/htmlchecker-postadd.jpg)
+
+Post Add page - [View Full HTML Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/htmlcheckerfull-postadd.pdf)
 
 Post Update page:
 
 ![HTML Update](documentation/testing/htmlchecker-postupdate.jpg)
 
+Post Update page - [View Full HTML Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/htmlcheckerfull-postupdate.pdf)
+
 Comment Update page:
 
 ![HTML Comment](documentation/testing/htmlchecker-commentupdate.jpg)
+
+Comment Update page - [View Full HTML Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/htmlcheckerfull-commentupdate.pdf)
 
 #### W3C CSS Validator:
 
 The W3C CSS Validator Services were used to validate the CSS to ensure there were no errors in there.
 
 ![CSS Val](documentation/testing/w3ccssvalidator.jpg)
+
+For more information: [View Full CSS Validation Results here.](https://github.com/mittnamnkenny/fishtales/blob/main/documentation/testing/w3ccssvalidatorfull.pdf)
 
 #### JSHint:
 
@@ -598,35 +612,35 @@ JSHint was used to validate the JavaScript with no errors highlighted.
 
 PEP8 Online linter (Python validator) The code passed without any errors on all files tested:
 
-admin.py
+  - admin.py
 
 ![PEP8 Admin](documentation/testing/pep8onlinecheck-admin.jpg)
 
-forms.py
+  - forms.py
 
 ![PEP8 Forms](documentation/testing/pep8onlinecheck-forms.jpg)
 
-models.py
+  - models.py
 
 ![PEP8 Models](documentation/testing/pep8onlinecheck-models.jpg)
 
-testforms.py
+  - testforms.py
 
 ![PEP8 Testforms](documentation/testing/pep8onlinecheck-testforms.jpg)
 
-testmodels.py
+  - testmodels.py
 
 ![PEP8 Testmodels](documentation/testing/pep8onlinecheck-testmodels.jpg)
 
-testviews.py
+  - testviews.py
 
 ![PEP8 Testviews](documentation/testing/pep8onlinecheck-testviews.jpg)
 
-urls.py
+  - urls.py
 
 ![PEP8 Urls](documentation/testing/pep8onlinecheck-urls.jpg)
 
-views.py
+  - views.py
 
 ![PEP8 Views](documentation/testing/pep8onlinecheck-views.jpg)
 
@@ -1042,6 +1056,79 @@ To further ensure this application is working correctly and functions as expecte
 
     - I have tested:
       - That the link address is correct and that it opens in a new tab.
+
+#### Testing which features support which stories
+
+User stories have been tested and below you can see which features support which stories:
+
+User stories are numbered 1 to 32 and the features are:
+
+1. Home
+2. Blog
+3. Add post
+4. Post detail
+5. Post update
+6. Comment update
+7. Register
+8. Login
+9. Django Admin
+10. System messages
+11. Footer
+12. Additional features
+
+| ID | User Stories                            | Features                |
+|----|---------------------------------------- |-------------------------|
+|  1 | Account registration and login          | 7, 8                    |
+|  2 | Manage posts                            | 9                       |
+|  3 | Create drafts                           | 9                       |
+|  4 | View post list                          | 1, 2                    |
+|  5 | Open a post                             | 1, 2, 4                 |
+|  6 | Create post                             | 3                       |
+|  7 | Edit post                               | 5                       |
+|  8 | Delete post                             | 4                       |
+|  9 | View own posts                          | N/A *                   |
+| 10 | Multiple images                         | 3                       |
+| 11 | Placeholder photos                      | 3                       |
+| 12 | Fish caught                             | 1, 2                    |
+| 13 | Weather info                            | 1, 2                    |
+| 14 | Number of comments                      | 1, 2                    |
+| 15 | Number of likes                         | 1, 2                    |
+| 16 | Restrict delete post                    | N/A *                   |
+| 17 | Restrict blog view                      | N/A *                   |
+| 18 | View likes                              | 4                       |
+| 19 | Like                                    | 4                       |
+| 20 | Downvote                                | N/A *                   |
+| 21 | View comments                           | 4                       |
+| 22 | Comment on a post                       | 4                       |
+| 23 | Delete Comment                          | 4                       |
+| 24 | Edit comment                            | 6                       |
+| 25 | Responsive                              | OK *                    |
+| 26 | Design                                  | OK *                    |
+| 27 | System messages                         | 10                      |
+| 28 | Hero image                              | 1                       |
+| 29 | Featurette                              | 1                       |
+| 30 | Favicon                                 | 12                      |
+| 31 | Carousel                                | 1                       |
+| 32 | GitHub                                  | 11                      |
+
+  - N/A - This user story was not implemented
+  - OK - Tested and verifed ok in Browser Testing and Responsiveness
+
+### Further Testing
+
+  - I have tested that the hover effect on all buttons and links works as expected.
+  - I have tested that all animations work correctly.
+
+### Solved bugs
+
+  - Django test error - When testing my python files I had to comment out the PostgreSQL database and use the default SQLite3 database in settings.py. Thanks to Code Institute’s Slack Channel, this was solved.
+  - Heroku database maintenance - I had to update the DATABASE_URL in my env.py file after receiving an email from Heroku about database maintenance. Thanks to Code Institute’s Slack Channel, this was solved.
+  - Am I responsive? - I had to install the Google Chrome extension, Ignore X-Frame headers to generate mockup images using Am I responsive. Thanks to Code Institute’s Slack Channel, this was solved.
+  - Uncaught ReferenceError: module not defined - This error message is displayed in the console after JavaScript testing using Jest. To fix this module.exports = removeAlerts; in script.js was commented out and can be enabled again when testing with Jest. Thanks to Code Institute’s Tutor Channel for their advice.
+
+### Known bugs
+
+  - Currently no known bugs.
 
 ## Deployment
 
