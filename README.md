@@ -8,13 +8,60 @@ The purpose of this site is to allow users to share their fishing stories, uploa
 ![Mockup](documentation/amiresponsive.jpg)
 
 ## Index – Table of Contents
-* [User Experience (UX)](#user-experience-ux) 
+* [User Experience (UX)](#user-experience-ux)
+  * [Project Goals:](#project-goals)
+  * [Strategy:](#strategy)
+  * [User stories:](#user-stories)
 * [Features](#features)
+  * [Existing Features](#existing-features)
+    * [Navigation bar:](#navigation-bar)
+    * [Home page:](#home-page)
+    * [Blog page:](#blog-page)
+    * [Add post page:](#add-post-page)
+    * [Post detail page:](#post-detail-page)
+    * [Post update page:](#post-update-page)
+    * [Comment update page:](#comment-update-page)
+    * [Register page:](#register-page)
+    * [Login page:](#login-page)
+    * [Logout page:](#logout-page)
+    * [Django Admin page:](#django-admin-page)
+    * [System messages:](#system-messages)
+    * [Footer:](#footer)
+    * [Additional features:](#additional-features)
+    * [Meta Data:](#meta-data)
+  * [Features to Implement in the future](#features-to-implement-in-the-future)
 * [Design](#design)
+  * [Wireframes](#wireframes)
+  * [Data Model](#data-model)
+  * [Site map](#site-map)
+  * [Colours](#colours)
+  * [Typography](#typography)
+  * [Imagery](#imagery)
 * [Technologies Used](#technologies-used)
+  * [Languages Used:](#languages-used)
+  * [Frameworks and Libraries Used:](#frameworks-and-libraries-used)
+  * [Software and Web Applications Used:](#software-and-web-applications-used)
 * [Testing](#testing)
+  * [Browser Testing](#browser-testing)
+  * [Responsiveness](#responsiveness)
+  * [Validator Testing](#validator-testing)
+    * [W3C Markup Validator:](#w3c-markup-validator)
+    * [W3C CSS Validator:](#w3c-css-validator)
+    * [JSHint:](#jshint)
+    * [PEP8 Online:](#pep8-online)
+    * [Lighthouse:](#lighthouse)
+  * [Automated Testing](#automated-testing)
+    * [Jest:](#jest)
+    * [Django testing tools:](#django-testing-tools)
+  * [User Stories testing](#user-stories-testing)
+    * [Testing which features support which stories](#testing-which-features-support-which-stories)
+  * [Further Testing](#further-testing)
+  * [Solved bugs](#solved-bugs)
+  * [Known bugs](#known-bugs)
 * [Deployment](#deployment)
 * [Credits](#credits)
+  * [Code](#code)
+  * [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
 
@@ -517,6 +564,7 @@ This photo was chosen as the hero image to display on the front page. Photoshop 
   - [Git:](https://git-scm.com/) Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
   - [GitHub:](https://github.com/) GitHub is used to store the projects code after being pushed from Git and to create the Kanban board used for this project.
   - [Google Fonts:](https://fonts.google.com/) To import font family ’Cabin Sketch’ which is used throughout the site. Added fallback font sans-serif.
+  - [Google Maps:](https://mapsplatform.google.com/) Google Maps Embed API used in footer section
   - [Heroku:](https://www.heroku.com/) For deployment and hosting of the application.
   - [Heroku PostgreSQL:](https://www.heroku.com/postgres) The database used for this application.
   - [HTML Validator:](https://validator.w3.org/) Check your code for HTML validation.
@@ -1063,53 +1111,55 @@ User stories have been tested and below you can see which features support which
 
 User stories are numbered 1 to 32 and the features are:
 
-1. Home
-2. Blog
-3. Add post
-4. Post detail
-5. Post update
-6. Comment update
-7. Register
-8. Login
-9. Django Admin
-10. System messages
-11. Footer
-12. Additional features
+1. Navigation bar
+2. Home
+3. Blog
+4. Add post
+5. Post detail
+6. Post update
+7. Comment update
+8. Register
+9. Login
+10. Logout
+11. Django Admin
+12. System messages
+13. Footer
+14. Additional features
 
 | ID | User Stories                            | Features                |
 |----|---------------------------------------- |-------------------------|
-|  1 | Account registration and login          | 7, 8                    |
-|  2 | Manage posts                            | 9                       |
-|  3 | Create drafts                           | 9                       |
-|  4 | View post list                          | 1, 2                    |
-|  5 | Open a post                             | 1, 2, 4                 |
-|  6 | Create post                             | 3                       |
-|  7 | Edit post                               | 5                       |
-|  8 | Delete post                             | 4                       |
+|  1 | Account registration and login          | 8, 9, 10                |
+|  2 | Manage posts                            | 11                      |
+|  3 | Create drafts                           | 11                      |
+|  4 | View post list                          | 2, 3                    |
+|  5 | Open a post                             | 2, 3, 5                 |
+|  6 | Create post                             | 4                       |
+|  7 | Edit post                               | 6                       |
+|  8 | Delete post                             | 5                       |
 |  9 | View own posts                          | N/A *                   |
-| 10 | Multiple images                         | 3                       |
-| 11 | Placeholder photos                      | 3                       |
-| 12 | Fish caught                             | 1, 2                    |
-| 13 | Weather info                            | 1, 2                    |
-| 14 | Number of comments                      | 1, 2                    |
-| 15 | Number of likes                         | 1, 2                    |
+| 10 | Multiple images                         | 4                       |
+| 11 | Placeholder photos                      | 4                       |
+| 12 | Fish caught                             | 2, 3                    |
+| 13 | Weather info                            | 2, 3                    |
+| 14 | Number of comments                      | 2, 3                    |
+| 15 | Number of likes                         | 2, 3                    |
 | 16 | Restrict delete post                    | N/A *                   |
 | 17 | Restrict blog view                      | N/A *                   |
-| 18 | View likes                              | 4                       |
-| 19 | Like                                    | 4                       |
+| 18 | View likes                              | 5                       |
+| 19 | Like                                    | 5                       |
 | 20 | Downvote                                | N/A *                   |
-| 21 | View comments                           | 4                       |
-| 22 | Comment on a post                       | 4                       |
-| 23 | Delete Comment                          | 4                       |
-| 24 | Edit comment                            | 6                       |
+| 21 | View comments                           | 5                       |
+| 22 | Comment on a post                       | 5                       |
+| 23 | Delete Comment                          | 5                       |
+| 24 | Edit comment                            | 7                       |
 | 25 | Responsive                              | OK *                    |
-| 26 | Design                                  | OK *                    |
-| 27 | System messages                         | 10                      |
-| 28 | Hero image                              | 1                       |
-| 29 | Featurette                              | 1                       |
-| 30 | Favicon                                 | 12                      |
-| 31 | Carousel                                | 1                       |
-| 32 | GitHub                                  | 11                      |
+| 26 | Design                                  | 1, OK *                 |
+| 27 | System messages                         | 12                      |
+| 28 | Hero image                              | 2                       |
+| 29 | Featurette                              | 2                       |
+| 30 | Favicon                                 | 14                      |
+| 31 | Carousel                                | 2                       |
+| 32 | GitHub                                  | 13                      |
 
   - N/A - This user story was not implemented
   - OK - Tested and verifed ok in Browser Testing and Responsiveness
@@ -1132,6 +1182,83 @@ User stories are numbered 1 to 32 and the features are:
 
 ## Deployment
 
+The application was deployed to Heroku. The steps to deploy are as follows:
 
+  - Login to [Heroku](https://dashboard.heroku.com/apps) dashboard to get an overview of installed apps.
+  - Click on New => Create new app.
+  - Choose a name for your application (must be unique) and enter your location.
+  - Click on Create app.
+  - After creating your new application, navigate and click on the Resources tab.
+  - In the Add-ons search bar enter Heroku Postgres => Select Heroku Postgres.
+  - A pop-up window till appear, choose Plan name Hobby Dev - Free.
+  - Click on Submit order form.
+  - Navigate to the Settings tab => click on Reveal Config Vars.
+  - Copy the DATABASE_URL url value to the clipboard.
+  - In GitPod => Create a new env.py file on top level directory.
+  - In the env.py file:
+    - Set environment variables: os.environ[”DATABASE_URL"] = "Paste in Heroku DATABASE_URL Link”
+    - Add in secret key: os.environ[”SECRET_KEY"] = "Make up your own randomSecretKey”
+  - In Heroku => Navigate to the Settings tab => click on Reveal Config Vars.
+  - Add SECRET_KEY to Config Vars with the randomSecretKey value previously chosen.
+  - In the settings.py file:
+    - Remove the insecure secret key and replace it with: SECRET_KEY = os.environ.get(’SECRET_KEY')
+    - Update to use the DATABASE_URL: dj_database_url.parse(os.environ.get(”DATABASE_URL"))
+  - Save all files and Make Migrations: python3 manage.py migrate
+  - Login to [Cloudinary](https://cloudinary.com/) and navigate to the Cloudinary Dashboard.
+  - Copy your CLOUDINARY_URL API Environment Variable to the clipboard.
+  - In the env.py file:
+    - Add Cloudinary URL: os.environ["CLOUDINARY_URL"] = ”cloudinary://paste in API Environment Variable”
+  - In Heroku => Navigate to the Settings tab => click on Reveal Config Vars.
+  - Add ’CLOUDINARY_URL’ to Config Vars with the in API Environment Variable value.
+  - Add ’DISABLE_COLLECTSTATIC’ 1 to Heroku Config Vars (temporary, must be removed before final deployment).
+  - In the settings.py file:
+    - Add Cloudinary Libraries to installed apps (note: order is important) ’cloudinary_storage',  ’django.contrib.staticfiles', ’cloudinary',
+    - Add the following code below STATIC_URL = ’/static/' to use Cloudinary to store media and static files:
+      - STATICFILES_STORAGE = ’cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+      - STATICFILES_DIRS = [os.path.join(BASE_DIR, ’static')]
+      - STATIC_ROOT = os.path.join(BASE_DIR, ’staticfiles')
+      - MEDIA_URL = '/media/'
+      - DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    - Link file to the templates directory in Heroku: TEMPLATES_DIR = os.path.join(BASE_DIR, ’templates')
+    - Change the templates directory to: TEMPLATES_DIR: 'DIRS': [TEMPLATES_DIR],
+    - Add Heroku Hostname to ALLOWED_HOSTS: ALLOWED_HOSTS = [”Your_Project_name.herokuapp.com”, ”localhost”]
+  - Create 3 new folders on top level directory: media, static, templates
+  - Create a Procfile on the top level directory
+  - In the Procfile file:
+    - Add the following code with your project name: web: gunicorn PROJ_NAME.wsgi
+  - In the terminal: Add, Commit and Push.
+  - In Heroku navigate to the Deploy tab => click on Deploy Branch.
+  - When build process is finished click on Open App to visit the live site.
 
-## Credits 
+## Credits
+
+  - [Am I Responsive:](http://ami.responsivedesign.is) Checking the responsive.
+  - [Balsamiq:](https://balsamiq.com/) Used to create the wireframes.
+  - [Bootstrap documentation:](https://getbootstrap.com/docs/4.6/getting-started/introduction/) Bootstrap documentation used for styling and to build responsive web pages.
+  - [Code Institute:](https://codeinstitute.net/) Walkthrough modules in Full Stack Frameworks.
+  - [Code Institute Slack Community:](https://app.slack.com/) Slack community for troubleshooting and FAQ.
+  - [Code Institute Tutor Support:](https://app.slack.com/) For help and support.
+  - [Codemy:](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) Inspiration for creating A simple blog with Python and Django.
+  - [Django documentation:](https://docs.djangoproject.com/en/4.1/) Everything you need to know about Django.
+  - [Gauger:](https://gauger.io/fonticon/) To create the favicon, create beautiful favicon with ease.
+  - [GitHub Checkout:](https://www.youtube.com/watch?v=BplF7vHXewA) How to break issues into actionable tasks.
+  - [Jest Docs:](https://jestjs.io/docs/getting-started) For JavaScript testing.
+  - [Lucidchart:](https://www.lucidchart.com/pages/) Used to create the site map.
+  - [Materialize Colors:](https://materializecss.com/color.html) Used to create the main colour palette.
+  - [Stack Overflow:](https://stackoverflow.com) For troubleshooting and FAQ.
+  - [Unsplash:](https://unsplash.com/photos/NtkCemIfaiU) Man fishing on river at daytime photo, Chris Sarsgard.
+  - [W3Schools:](https://www.w3schools.com) Online Web Tutorials.
+
+### Code
+
+* [SVG Wave Generator:](https://softr.io/tools/svg-wave-generator/) code used to generate a gradient SVG wave:
+
+    `<svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 110" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(255, 255, 255, 1)" offset="0%"></stop><stop stop-color="rgba(255, 255, 255, 0)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,55L48,55C96,55,192,55,288,58.7C384,62,480,70,576,66C672,62,768,48,864,38.5C960,29,1056,26,1152,29.3C1248,33,1344,44,1440,44C1536,44,1632,33,1728,34.8C1824,37,1920,51,2016,56.8C2112,62,2208,59,2304,55C2400,51,2496,48,2592,45.8C2688,44,2784,44,2880,40.3C2976,37,3072,29,3168,23.8C3264,18,3360,15,3456,23.8C3552,33,3648,55,3744,58.7C3840,62,3936,48,4032,49.5C4128,51,4224,70,4320,71.5C4416,73,4512,59,4608,49.5C4704,40,4800,37,4896,29.3C4992,22,5088,11,5184,12.8C5280,15,5376,29,5472,29.3C5568,29,5664,15,5760,16.5C5856,18,5952,37,6048,40.3C6144,44,6240,33,6336,31.2C6432,29,6528,37,6624,42.2C6720,48,6816,51,6864,53.2L6912,55L6912,110L6864,110C6816,110,6720,110,6624,110C6528,110,6432,110,6336,110C6240,110,6144,110,6048,110C5952,110,5856,110,5760,110C5664,110,5568,110,5472,110C5376,110,5280,110,5184,110C5088,110,4992,110,4896,110C4800,110,4704,110,4608,110C4512,110,4416,110,4320,110C4224,110,4128,110,4032,110C3936,110,3840,110,3744,110C3648,110,3552,110,3456,110C3360,110,3264,110,3168,110C3072,110,2976,110,2880,110C2784,110,2688,110,2592,110C2496,110,2400,110,2304,110C2208,110,2112,110,2016,110C1920,110,1824,110,1728,110C1632,110,1536,110,1440,110C1344,110,1248,110,1152,110C1056,110,960,110,864,110C768,110,672,110,576,110C480,110,384,110,288,110C192,110,96,110,48,110L0,110Z"></path></svg>`
+
+* [SVG Backgrounds:](https://svgbackgrounds.com/) code for background "Endless Constellation":
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23E4E7EB' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23E4E7EB'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+
+### Acknowledgements
+
+  - My mentor at Code Institute Brian Macharia for code review, help and feedback. Very much appreciated!
