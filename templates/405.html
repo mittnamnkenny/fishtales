@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h1>Error 405: Method Not Allowed</h1>
+            <div>
+                <a href="{% url 'home' %}" class="btn btn-signup btn-lg">
+                    Go to Home Page
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
