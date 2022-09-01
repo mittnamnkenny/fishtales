@@ -591,7 +591,7 @@ I have tested that this application works using Macbook Air (Retina, 13-inch, 20
 
 I have tested this application works on the following iOS devices using Safari Version 15.6 browser:
 
-  - iPhone X, with iPadOS 15.6 installed
+  - iPhone X, with iOS 15.6 installed
   - iPad Air 3, with iPadOS 15.6 installed
 
 ### Responsiveness
